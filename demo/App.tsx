@@ -6,17 +6,23 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p onClick={adFix.test1}>
-          Edit <code>src/App.tsx</code> and save to reload.
+        <p
+          style={{ margin: "0 0 16px 0" }}
+          onClick={() => adFix.searchSDK("searchKeyWord", { test: "testText" })}
+        >
+          点击打开 searchKeyWord
         </p>
-        <a
+        <p onClick={() => adFix.searchSDK("searchKeyWord2", { test: "xxx" })}>
+          点击打开 searchKeyWord2
+        </p>
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
           Learn Rea
-        </a>
+        </a> */}
       </header>
     </div>
   )

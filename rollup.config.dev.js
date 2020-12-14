@@ -1,9 +1,10 @@
 import typescript from "@rollup/plugin-typescript"
 import commonjs from "@rollup/plugin-commonjs"
 import { nodeResolve } from "@rollup/plugin-node-resolve"
+import postcss from "rollup-plugin-postcss"
 import replace from "@rollup/plugin-replace"
-import serve from 'rollup-plugin-serve'
-import livereload from 'rollup-plugin-livereload'
+import serve from "rollup-plugin-serve"
+import livereload from "rollup-plugin-livereload"
 
 const env = process.env.NODE_ENV
 
@@ -21,9 +22,12 @@ export default [
       },
     ],
     plugins: [
-      typescript({tsconfig: "tsconfig.dev.json"}),
+      typescript({ tsconfig: "tsconfig.dev.json" }),
       nodeResolve(),
       commonjs(),
+      postcss({
+        plugins: [],
+      }),
       replace({
         "process.env.NODE_ENV": JSON.stringify(env),
       }),
