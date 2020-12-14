@@ -19,13 +19,15 @@ ReactDOM.render(
 class AdFix {
   from: string
   uuid: string
-  constructor(from: string, uuid: string) {
+  constructor(from: string, uuid?: string) {
     this.from = from
     SDKStore.from = from
-    this.uuid = uuid
-    SDKStore.uuid = uuid
+    if(uuid){
+      this.uuid = uuid
+      SDKStore.uuid = uuid
+    }
   }
-  searchSDK(type: string, ad: any, callback = () => {}) {
+  quickModifyAD(type: string, ad: any, callback = () => {}) {
     console.log(22222222222, SDKStore)
     SDKStore.type = type
     SDKStore.open = true

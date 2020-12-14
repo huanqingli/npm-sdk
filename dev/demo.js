@@ -88568,10 +88568,12 @@
 	    function AdFix(from, uuid) {
 	        this.from = from;
 	        sdkStore.from = from;
-	        this.uuid = uuid;
-	        sdkStore.uuid = uuid;
+	        if (uuid) {
+	            this.uuid = uuid;
+	            sdkStore.uuid = uuid;
+	        }
 	    }
-	    AdFix.prototype.searchSDK = function (type, ad, callback) {
+	    AdFix.prototype.quickModifyAD = function (type, ad, callback) {
 	        if (callback === void 0) { callback = function () { }; }
 	        console.log(22222222222, sdkStore);
 	        sdkStore.type = type;
@@ -88586,8 +88588,8 @@
 	    var adFix = react.useRef(new AdFix("diagnosis", "1234")).current;
 	    return (react.createElement("div", { className: "App" },
 	        react.createElement("header", { className: "App-header" },
-	            react.createElement("p", { style: { margin: "0 0 16px 0" }, onClick: function () { return adFix.searchSDK("searchKeyWord", { test: "testText" }); } }, "\u70B9\u51FB\u6253\u5F00 searchKeyWord"),
-	            react.createElement("p", { onClick: function () { return adFix.searchSDK("searchKeyWord2", { test: "xxx" }); } }, "\u70B9\u51FB\u6253\u5F00 searchKeyWord2"))));
+	            react.createElement("p", { style: { margin: "0 0 16px 0" }, onClick: function () { return adFix.quickModifyAD("searchKeyWord", { test: "testText" }); } }, "\u70B9\u51FB\u6253\u5F00 searchKeyWord"),
+	            react.createElement("p", { onClick: function () { return adFix.quickModifyAD("searchKeyWord2", { test: "xxx" }); } }, "\u70B9\u51FB\u6253\u5F00 searchKeyWord2"))));
 	}
 
 	reactDom.render(react.createElement(react.StrictMode, null,

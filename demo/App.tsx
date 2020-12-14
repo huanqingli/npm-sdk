@@ -8,11 +8,11 @@ function App() {
       <header className="App-header">
         <p
           style={{ margin: "0 0 16px 0" }}
-          onClick={() => adFix.searchSDK("searchKeyWord", { test: "testText" })}
+          onClick={() => adFix.quickModifyAD("searchKeyWord", { test: "testText" })}
         >
           点击打开 searchKeyWord
         </p>
-        <p onClick={() => adFix.searchSDK("searchKeyWord2", { test: "xxx" })}>
+        <p onClick={() => adFix.quickModifyAD("searchKeyWord2", { test: "xxx" })}>
           点击打开 searchKeyWord2
         </p>
         {/* <a
